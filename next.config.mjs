@@ -1,17 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Opciones experimentales
-  experimental: {
-    reactCompiler: true,
-  },
-
-  // Información de compilación
-  swcMinify: true,
+  // React Compiler (clave a nivel raíz en Next 16)
+  reactCompiler: true,
 
   // Configuración de imágenes
   images: {
     remotePatterns: [],
-    unoptimized: true,
+    unoptimized: true, // si usas sharp, considera poner false y aprobar builds
   },
 
   // Headers de seguridad
@@ -28,13 +23,12 @@ const nextConfig = {
     ];
   },
 
-  // Configuración de ESLint y TypeScript
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  // Configuración de TypeScript
   typescript: {
     ignoreBuildErrors: true,
   },
+
+  // Nota: swcMinify y eslint ya no se configuran aquí
 };
 
 export default nextConfig;
