@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Compilador de React para optimización
-  reactCompiler: true,
-  
+  // Opciones experimentales
+  experimental: {
+    reactCompiler: true,
+  },
+
   // Información de compilación
   swcMinify: true,
 
@@ -18,18 +20,9 @@ const nextConfig = {
       {
         source: '/:path*',
         headers: [
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block',
-          },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Frame-Options', value: 'DENY' },
+          { key: 'X-XSS-Protection', value: '1; mode=block' },
         ],
       },
     ];
