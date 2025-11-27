@@ -1,9 +1,7 @@
-// Esta es la nueva forma de manejar middleware en Next.js 16+
-// Referencia: https://nextjs.org/docs/messages/middleware-to-proxy
-
+// proxy.js
 import { NextResponse } from "next/server"
 
-export function middleware(request) {
+export function proxy(request) {
   const sessionToken = request.cookies.get("session")?.value
   const { pathname } = request.nextUrl
 
